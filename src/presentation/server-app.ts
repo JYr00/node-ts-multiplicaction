@@ -1,5 +1,6 @@
 import { SaveFiles } from '../domain/use-case/save-file.use-case';
 import { CreateTable } from './../domain/use-case/create-table.use-case';
+
 interface RunOptions {
     base: number;
     limit: number;
@@ -8,8 +9,14 @@ interface RunOptions {
     fileDestination: string;
 }
 
-export class SercerApp {
-    static run({ base, limit, showTable, fileName, fileDestination }: RunOptions) {
+export class ServerApp {
+    static run({
+        base,
+        limit,
+        showTable,
+        fileName,
+        fileDestination,
+    }: RunOptions) {
         console.log('Sercer running...');
 
         const table = new CreateTable().execute({ base, limit });

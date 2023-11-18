@@ -1,5 +1,5 @@
 export interface CreateTableUseCase {
-    execute: (options:CreateTableOptions) => string;
+    execute: (options: CreateTableOptions) => string;
 }
 
 export interface CreateTableOptions {
@@ -7,9 +7,7 @@ export interface CreateTableOptions {
     limit: number;
 }
 
-export class CreateTable implements CreateTableUseCase{
-    constructor() {}
-
+export class CreateTable implements CreateTableUseCase {
     execute({ base, limit }: CreateTableOptions) {
         let outputMessage = '';
         for (let i = 1; i <= limit; i++) {
